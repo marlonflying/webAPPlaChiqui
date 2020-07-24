@@ -15,15 +15,15 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 
 	files := []string{
-		"./ui/html/home.page.tmpl",
-		"./ui/html/base.layout.tmpl",
-		"./ui/html/footer.partial.tmpl",
+		"/home/marlonflying/go/src/webAPPlaChiqui/ui/html/homePage.tmpl",
+		"/home/marlonflying/go/src/webAPPlaChiqui/ui/html/baseLayout.tmpl",
+		"/home/marlonflying/go/src/webAPPlaChiqui/ui/html/footerPartial.tmpl",
 	}
 
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
 		log.Println(err.Error())
-		http.Error(w, "Internal Server Error", 500)
+		http.Error(w, "Internal Server Error...  Files not found", 500)
 		return
 	}
 

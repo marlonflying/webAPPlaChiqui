@@ -11,7 +11,7 @@ func main() {
 	mux.HandleFunc("/snippet", showSnippet)
 	mux.HandleFunc("/snippet/create", createSnippet)
 
-	fileServer := http.FileServer(http.Dir("./ui/static/"))
+	fileServer := http.FileServer(http.Dir("/home/marlonflying/go/src/webAPPlaChiqui/ui/static/"))
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
 	log.Println("Starting server on :4000")
